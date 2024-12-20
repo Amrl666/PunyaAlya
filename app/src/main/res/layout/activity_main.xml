@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Good Morning, Alya"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Search food, package, etc."
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@id/greetingText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@id/searchBarLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/locationButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bantul,"
+            android:textColor="@color/white"
+            android:drawableStart="@drawable/ic_location"
+            android:background="@drawable/rounded_button_background" />
+
+        <Button
+            android:id="@+id/orderHistoryButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Order History"
+            android:drawableStart="@drawable/ic_history"
+            android:background="@drawable/rounded_button_background" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/categoriesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categories"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonRow"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <GridLayout
+        android:id="@+id/categoriesGrid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:columnCount="3"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@id/categoriesLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/completePackageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Complete Package"
+            android:background="@drawable/rounded_button_background"
+            android:drawableTop="@drawable/ic_complete_package"
+            android:textAlignment="center"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/savingPackageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Saving Package"
+            android:background="@drawable/rounded_button_background"
+            android:drawableTop="@drawable/ic_saving_package"
+            android:textAlignment="center"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/healthyPackageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Healthy Package"
+            android:background="@drawable/rounded_button_background"
+            android:drawableTop="@drawable/ic_healthy_package"
+            android:textAlignment="center"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/fastFoodButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Fast Food"
+            android:background="@drawable/rounded_button_background"
+            android:drawableTop="@drawable/ic_fast_food"
+            android:textAlignment="center"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/eventPackageButton"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_margin="4dp"
+            android:text="Event Packages"
+            android:background="@drawable/rounded_button_background"
+            android:drawableTop="@drawable/ic_event_package"
+            android:textAlignment="center"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/othersButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Others"
+            android:background="@drawable/rounded_button_background"
+            android:drawableTop="@drawable/ic_others"
+            android:textAlignment="center"
+            android:layout_columnWeight="1" />
+    </GridLayout>
+
+
+    <TextView
+        android:id="@+id/newTrendingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="New and Trending"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categoriesGrid" />
+
+    <HorizontalScrollView
+        android:id="@+id/trendingScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/newTrendingLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/trendingItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Trending Item 1 -->
+            <LinearLayout
+                android:id="@+id/trendingItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/trendingImage1"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/spageti" />
+
+                <TextView
+                    android:id="@+id/trendingTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spagetti"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/trendingLikes1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2,200 likes"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/trendingItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/trendingImage2"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/salad" />
+
+                <TextView
+                    android:id="@+id/trendingTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salad"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/trendingLikes2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,700 likes"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/trendingItem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/trendingImage3"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/nasi_goreng" />
+
+                <TextView
+                    android:id="@+id/trendingTitle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nasi Goreng"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/trendingLikes3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,800 likes"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/trendingItem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/trendingImage4"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/pizza" />
+
+                <TextView
+                    android:id="@+id/trendingTitle4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pizza"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/trendingLikes4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="900 likes"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/trendingItem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/trendingImage5"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/telur" />
+
+                <TextView
+                    android:id="@+id/trendingTitle5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Telur"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/trendingLikes5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="700 likesa"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
